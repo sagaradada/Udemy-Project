@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import set = Reflect.set;
 
 @Component({
   selector: 'app-server',
@@ -7,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServerComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    setTimeout(() =>{
+     this.allowNewServer = true;
+    },2000)
+  }
 
   ngOnInit() {
   }
+
+  allowNewServer = false;
+  serverCreationStatus = '';
+  serverName ='';
 
   intro:string ="Introduction";
   name:string = "Sagar Timalsina";
@@ -21,6 +30,15 @@ export class ServerComponent implements OnInit {
   }
   getCollege(){
     return this.college;
+  }
+
+  onCreateServer() {
+    if (this.serverName =='') {
+      return this.serverCreationStatus = 'Sorry no server is created ' +'Plese enter server name';
+    }
+    else {
+      return this.serverCreationStatus = 'Server is created ' + this.serverName;
+    }
   }
 
 }

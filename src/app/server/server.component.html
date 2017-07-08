@@ -1,3 +1,6 @@
 <h1> I am on Server Component</h1>
 <h2 style="text-align: center"> My {{intro}} </h2>
-<p> Hello My Name is {{getName()}}. I study in {{getCollege()}}</p>
+<p>{{serverCreationStatus}}</p>
+<button class="btn btn-primary" [disabled]="!allowNewServer"(click)="onCreateServer()">Click here to create Server</button>
+<input id="new" type="text" class="form-control" [disabled]="!allowNewServer" [(ngModel)]="serverName">
+<button class="btn btn-primary" (click)="clearServer()">Clear</button>
