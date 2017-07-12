@@ -1,6 +1,10 @@
 <h1> I am on Server Component</h1>
 <h2 style="text-align: center"> My {{intro}} </h2>
 <p>{{serverCreationStatus}}</p>
+
 <button class="btn btn-primary" [disabled]="!allowNewServer"(click)="onCreateServer()">Click here to create Server</button>
-<input id="new" type="text" class="form-control" [disabled]="!allowNewServer" [(ngModel)]="serverName">
-<button class="btn btn-primary" (click)="clearServer()">Clear</button>
+<input type="text" placeholder="Enter Server Name Here" id="hello"   class="form-control" [disabled]="!allowNewServer" [(ngModel)]="serverName">
+<button class="btn btn-primary" (click)="clearServer()">Clear Server</button>
+
+<input type="text" placeholder="Enter your name here" class="form-control" [(ngModel)]="userName">
+<p> {{userName}}</p>

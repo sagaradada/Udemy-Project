@@ -24,6 +24,7 @@ export class ServerComponent implements OnInit {
   intro:string ="Introduction";
   name:string = "Sagar Timalsina";
   college:string ="Islington College";
+  userName:string ="";
 
   getName(){
     return this.name;
@@ -33,6 +34,7 @@ export class ServerComponent implements OnInit {
   }
 
   onCreateServer() {
+    //Validation
     if (this.serverName =='') {
       return this.serverCreationStatus = 'Sorry no server is created ' +'Plese enter server name';
     }
@@ -40,5 +42,10 @@ export class ServerComponent implements OnInit {
       return this.serverCreationStatus = 'Server is created ' + this.serverName;
     }
   }
+
+  clearServer(){
+    return this.serverCreationStatus = 'Server is Cleared';
+  }
+
 
 }
