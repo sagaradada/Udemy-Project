@@ -22,7 +22,7 @@ export class ServeComponent implements OnInit {
   }
 
   getColor(){
-   return this.serverStatus === 'online' ? 'green' : 'red';
+   return this.serverStatus === 'online' ? 'green' : 'blue';
   }
 
 }

@@ -22,6 +22,7 @@ export class ServerComponent implements OnInit {
   serverName ='';
   serverCreated=false;
   userName:string ="";
+  servers=['Test Server', 'Test Server 2'];
 
   onCreateServer() {
     //Validation
@@ -29,6 +30,7 @@ export class ServerComponent implements OnInit {
       return this.serverCreationStatus = 'Server was unable to create' +'Please enter server name';
     }
     else {
+      this.servers.push(this.serverName);
       this.serverCreated =true;
       return this.serverCreationStatus = 'Server is created ' + this.serverName;
     }

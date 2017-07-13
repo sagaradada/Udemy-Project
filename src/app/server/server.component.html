@@ -5,5 +5,5 @@
 <ng-template #noServer>
   <p> No server has created</p>
  </ng-template>
-<app-serve></app-serve>
+<app-serve *ngFor="let server of servers"></app-serve>
 
