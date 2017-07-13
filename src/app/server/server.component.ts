@@ -20,32 +20,18 @@ export class ServerComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = '';
   serverName ='';
-
-  intro:string ="Introduction";
-  name:string = "Sagar Timalsina";
-  college:string ="Islington College";
+  serverCreated=false;
   userName:string ="";
-
-  getName(){
-    return this.name;
-  }
-  getCollege(){
-    return this.college;
-  }
 
   onCreateServer() {
     //Validation
     if (this.serverName =='') {
-      return this.serverCreationStatus = 'Sorry no server is created ' +'Plese enter server name';
+      return this.serverCreationStatus = 'Server was unable to create' +'Please enter server name';
     }
     else {
+      this.serverCreated =true;
       return this.serverCreationStatus = 'Server is created ' + this.serverName;
     }
   }
-
-  clearServer(){
-    return this.serverCreationStatus = 'Server is Cleared';
-  }
-
 
 }
